@@ -22,12 +22,17 @@ def process_data(data):
     for d in data:
         date = d.get('date', None)
         state = d.get('state', None)
-        if not state or not date:
+        tTested = d.get('totalTestResults', -1)
+        tConfirmed = d.get('positive', -1)
+        tHospitalized = d.get('hospitalized', -1)
+        tDeath = d.get('death', -1)
+
+        if not state or not date or not tTested or not tConfirmed or not tHospitalized or not tDeath:
             continue
         state_data = meta_json.get(state, None)
         if not state_data:
             continue
-        tTested = d.get('totalTestResults', -1)
+        
         population = state_data.get("population")
         processed.append({
             "date": date,
@@ -37,14 +42,17 @@ def process_data(data):
             "tTested": tTested,
             "dTested": d.get('totalTestResultsIncrease', -1),
             "pPopulation": "{:.2f}".format(tTested / population * 100),
-            "tConfirmed": d.get('positive', -1),
+            "pTested": "{:.2f}".format(tConfirmed / tTested * 100),
+            "pHospitalized":"{:.2f}".format(tDeath / tHospitalized * 100),
+            "tConfirmed": tConfirmed,
+            "pConfirmed": "{:.2f}".format(tHospitalized / tConfirmed * 100),
             "dConfirmed": d.get('positiveIncrease', -1),
             "dConfirmedPercentage": "{:.2f}".format(d.get('positiveIncrease') / d.get('positive') * 100) if d.get(
                 'positive', None) and d.get(
                 'positiveIncrease', None) else None,
-            "tHospitalized": d.get('hospitalized', None),
+            "tHospitalized": tHospitalized,
             "dHospitalized": d.get('hospitalizedIncrease', None),
-            "tDeath": d.get('death', None),
+            "tDeath": tDeath,
             "dDeath": d.get('deathIncrease', None)
         })
     return processed
