@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import HistoricTable from "./HistoricTable";
+import React, {useEffect, useState} from 'react';;
 
 function App() {
-  const [count, setCount] = useState(0);
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(false);
+    useEffect(() => {
+        setLoading(true);
+        fetch('/historic').then(res => res.json()).then(data => {
+            setData(data);
+            setLoading(false);
+        });
+    }, []);
 
-  useEffect(() => {
-    fetch('/data').then(res => res.json()).then(data => {
-        setCount(data["positive"]);
-    });
-  }, []);
-
-  return (
-      <div className="App">
-        <header className="App-header">
-            <p>Alaska has {count} cases today</p>
-        </header>
-      </div>
-  );
+    return (
+        <div className="App">
+            <HistoricTable data={data} loading={loading}/>
+        </div>
+    );
 }
 
 export default App;
