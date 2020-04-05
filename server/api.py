@@ -22,38 +22,54 @@ def process_data(data):
     for d in data:
         date = d.get('date', None)
         state = d.get('state', None)
-        tTested = d.get('totalTestResults', -1)
-        tConfirmed = d.get('positive', -1)
-        tHospitalized = d.get('hospitalized', -1)
-        tDeath = d.get('death', -1)
-
-        if not state or not date or not tTested or not tConfirmed or not tHospitalized or not tDeath:
-            continue
         state_data = meta_json.get(state, None)
-        if not state_data:
+        if not state or not date or not state_data:
             continue
-        
-        population = state_data.get("population")
+
+        tConfirmed = d.get('positive', None)
+        dConfirmed = d.get('positiveIncrease', None)
+        tTested = d.get('totalTestResults', None)
+        dTested = d.get('totalTestResultsIncrease', None)
+        tHospitalized = d.get('hospitalized', None)
+        dHospitalized = d.get('hospitalizedIncrease', None)
+        tDeath = d.get('death', None)
+        dDeath = d.get('deathIncrease', None)
+        pop = state_data.get("population")
+        density = state_data.get("density")
+
+        pPopulation = "{:.2f}".format(tTested / pop * 100) if tTested and pop and pop != 0 else None
+        pTested = "{:.2f}".format(tConfirmed / tTested * 100) if tConfirmed and tTested and tTested != 0 else None
+        pHospitalized = "{:.2f}".format(tDeath / tHospitalized * 100) \
+            if tDeath and tHospitalized and tHospitalized != 0 \
+            else None
+        pConfirmed = "{:.2f}".format(tHospitalized / tConfirmed * 100) \
+            if tHospitalized and tConfirmed and tConfirmed != 0 \
+            else None
+        confirmedPercentageIncrease = "{:.2f}".format(dConfirmed / (tConfirmed - dConfirmed) * 100) \
+            if dConfirmed and tConfirmed and tConfirmed - dConfirmed != 0 \
+            else None
+        testedPercentageIncrease = "{:.2f}".format(dTested / (tTested - dTested) * 100) \
+            if dTested and tTested and tTested - dTested != 0 \
+            else None
         processed.append({
             "date": date,
             "state": state,
-            "population": population,
-            "density": state_data.get("density"),
+            "population": pop,
+            "density": density,
             "tTested": tTested,
-            "dTested": d.get('totalTestResultsIncrease', -1),
-            "pPopulation": "{:.2f}".format(tTested / population * 100),
-            "pTested": "{:.2f}".format(tConfirmed / tTested * 100),
-            "pHospitalized":"{:.2f}".format(tDeath / tHospitalized * 100),
+            "dTested": dTested,
+            "pPopulation": pPopulation,
+            "pTested": pTested,
+            "pHospitalized": pHospitalized,
             "tConfirmed": tConfirmed,
-            "pConfirmed": "{:.2f}".format(tHospitalized / tConfirmed * 100),
-            "dConfirmed": d.get('positiveIncrease', -1),
-            "dConfirmedPercentage": "{:.2f}".format(d.get('positiveIncrease') / d.get('positive') * 100) if d.get(
-                'positive', None) and d.get(
-                'positiveIncrease', None) else None,
+            "pConfirmed": pConfirmed,
+            "dConfirmed": dConfirmed,
+            "confirmedPercentageIncrease": confirmedPercentageIncrease,
+            "testedPercentageIncrease": testedPercentageIncrease,
             "tHospitalized": tHospitalized,
-            "dHospitalized": d.get('hospitalizedIncrease', None),
+            "dHospitalized": dHospitalized,
             "tDeath": tDeath,
-            "dDeath": d.get('deathIncrease', None)
+            "dDeath": dDeath
         })
     return processed
 
