@@ -38,7 +38,7 @@ def process_data(data):
         density = state_data.get("density")
 
         pPopulation = "{:.2f}".format(tTested / pop * 100) if tTested and pop and pop != 0 else None
-        pTested = "{:.2f}".format(tConfirmed / tTested * 100) if tConfirmed and tTested and tTested != 0 else None
+        pTested = "{:.2f}".format(dConfirmed / dTested * 100) if dConfirmed and dTested and dTested != 0 else None
         pHospitalized = "{:.2f}".format(tDeath / tHospitalized * 100) \
             if tDeath and tHospitalized and tHospitalized != 0 \
             else None
@@ -50,7 +50,7 @@ def process_data(data):
             else None
         testedPercentageIncrease = "{:.2f}".format(dTested / (tTested - dTested) * 100) \
             if dTested and tTested and tTested - dTested != 0 \
-            else None
+            else None  
         processed.append({
             "date": date,
             "state": state,

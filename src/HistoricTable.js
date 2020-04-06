@@ -42,7 +42,9 @@ function HistoricTable(props) {
             <TableCell align="center">{d.population}</TableCell>
             <TableCell align="center">{d.density}</TableCell>
             <TableCell align="center">{d.tTested}</TableCell>
-            <TableCell align="center">{d.dTested}</TableCell>
+            <TableCell align="center"
+            >
+             {`${d.dTested}(${d.testedPercentageIncrease}%)`}</TableCell>
             <TableCell align="center">{d.pPopulation}</TableCell>
             <TableCell align="center">{d.tConfirmed}</TableCell>
             <TableCell
