@@ -1,0 +1,257 @@
+{
+  "AL": {
+    "population": 4903185,
+    "area": 131171,
+    "density": 37.4
+  },
+  "AK": {
+    "population": 731545,
+    "area": 1477953,
+    "density": 0.5
+  },
+  "AZ": {
+    "population": 7278717,
+    "area": 294207,
+    "density": 24.7
+  },
+  "AR": {
+    "population": 3017804,
+    "area": 134771,
+    "density": 22.4
+  },
+  "CA": {
+    "population": 39512223,
+    "area": 403466,
+    "density": 97.9
+  },
+  "CO": {
+    "population": 5758736,
+    "area": 268431,
+    "density": 21.5
+  },
+  "CT": {
+    "population": 3565287,
+    "area": 12542,
+    "density": 284.3
+  },
+  "DE": {
+    "population": 973764,
+    "area": 5047,
+    "density": 192.9
+  },
+  "DC": {
+    "population": 705749,
+    "area": 158,
+    "density": 4466.8
+  },
+  "FL": {
+    "population": 21477737,
+    "area": 138887,
+    "density": 154.6
+  },
+  "GA": {
+    "population": 10617423,
+    "area": 148959,
+    "density": 71.3
+  },
+  "HI": {
+    "population": 1415872,
+    "area": 16635,
+    "density": 85.1
+  },
+  "ID": {
+    "population": 1787065,
+    "area": 214045,
+    "density": 8.3
+  },
+  "IL": {
+    "population": 12671821,
+    "area": 143793,
+    "density": 88.1
+  },
+  "IN": {
+    "population": 6732219,
+    "area": 92789,
+    "density": 72.6
+  },
+  "IA": {
+    "population": 3155070,
+    "area": 144669,
+    "density": 21.8
+  },
+  "KS": {
+    "population": 2913314,
+    "area": 211754,
+    "density": 13.8
+  },
+  "KY": {
+    "population": 4467673,
+    "area": 102269,
+    "density": 43.7
+  },
+  "LA": {
+    "population": 4648794,
+    "area": 111898,
+    "density": 41.5
+  },
+  "ME": {
+    "population": 1344212,
+    "area": 79883,
+    "density": 16.8
+  },
+  "MD": {
+    "population": 6045680,
+    "area": 25142,
+    "density": 240.5
+  },
+  "MA": {
+    "population": 6892503,
+    "area": 20202,
+    "density": 341.2
+  },
+  "MI": {
+    "population": 9986857,
+    "area": 146435,
+    "density": 68.2
+  },
+  "MN": {
+    "population": 5639632,
+    "area": 206232,
+    "density": 27.3
+  },
+  "MS": {
+    "population": 2976149,
+    "area": 121531,
+    "density": 24.5
+  },
+  "MO": {
+    "population": 6137428,
+    "area": 178040,
+    "density": 34.5
+  },
+  "MT": {
+    "population": 1068778,
+    "area": 376962,
+    "density": 2.8
+  },
+  "NE": {
+    "population": 1934408,
+    "area": 198974,
+    "density": 9.7
+  },
+  "NV": {
+    "population": 3080156,
+    "area": 284332,
+    "density": 10.8
+  },
+  "NH": {
+    "population": 1359711,
+    "area": 23187,
+    "density": 58.6
+  },
+  "NJ": {
+    "population": 8882190,
+    "area": 19047,
+    "density": 466.3
+  },
+  "NM": {
+    "population": 2096829,
+    "area": 314161,
+    "density": 6.7
+  },
+  "NY": {
+    "population": 19453561,
+    "area": 122057,
+    "density": 159.4
+  },
+  "NC": {
+    "population": 10488084,
+    "area": 125920,
+    "density": 83.3
+  },
+  "ND": {
+    "population": 762062,
+    "area": 178711,
+    "density": 4.3
+  },
+  "OH": {
+    "population": 11689100,
+    "area": 105829,
+    "density": 110.5
+  },
+  "OK": {
+    "population": 3956971,
+    "area": 177660,
+    "density": 22.3
+  },
+  "OR": {
+    "population": 4217737,
+    "area": 248608,
+    "density": 17.0
+  },
+  "PA": {
+    "population": 12801989,
+    "area": 115883,
+    "density": 110.5
+  },
+  "RI": {
+    "population": 1059361,
+    "area": 2678,
+    "density": 395.6
+  },
+  "SC": {
+    "population": 5148714,
+    "area": 77857,
+    "density": 66.1
+  },
+  "SD": {
+    "population": 884659,
+    "area": 196350,
+    "density": 4.5
+  },
+  "TN": {
+    "population": 6829174,
+    "area": 106798,
+    "density": 63.9
+  },
+  "TX": {
+    "population": 28995881,
+    "area": 676587,
+    "density": 42.9
+  },
+  "UT": {
+    "population": 3205958,
+    "area": 212818,
+    "density": 15.1
+  },
+  "VT": {
+    "population": 623989,
+    "area": 23871,
+    "density": 26.1
+  },
+  "VA": {
+    "population": 8535519,
+    "area": 102279,
+    "density": 83.5
+  },
+  "WA": {
+    "population": 7614893,
+    "area": 172119,
+    "density": 44.2
+  },
+  "WV": {
+    "population": 1792147,
+    "area": 62259,
+    "density": 28.8
+  },
+  "WI": {
+    "population": 5822434,
+    "area": 140268,
+    "density": 41.5
+  },
+  "WY": {
+    "population": 578759,
+    "area": 251470,
+    "density": 2.3
+  }
+}

@@ -27,5 +27,5 @@ yarn-error.log*
 covid
 covid/
 
-__pycache__
+server/__pycache__/*
 __pycache__/
